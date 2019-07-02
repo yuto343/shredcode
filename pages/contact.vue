@@ -1,0 +1,113 @@
+<template>
+    <div class="wrapper">
+        <P class="japanese disc" >なんでコンタクトがいるんだと思った人。netlifyで簡単に作れると聞いて試してみたかっただけです。でもつこうてくれたら嬉しいです。</P>
+        <form>
+            <div class="section">
+                <P>お名前など</P>
+                <input class="text" type="text">
+            </div>
+             <div class="section">
+                <P>メール</P>
+                <input class="text" type="text">
+            </div>
+            <div class="content_sec">
+                 <P>内容</P>
+                 <textarea name="content" rows="6" cols="240"></textarea>
+            </div>
+            <div class="section">
+                <input class="submit" type="submit">
+            </div>
+        </form>
+    </div>
+</template>
+
+<script>
+    export default {
+        layout:'console'
+    }
+</script>
+
+<style lang="scss" scoped>
+ .wrapper{
+        margin: auto;
+        .disc{
+            margin: auto;
+            line-height: 2;
+            max-width: 700px;
+            color: #B5B5B5;
+        }
+    }
+form{
+    .section{
+        margin: 40px;
+        display: flex;
+        justify-content: center;
+        p{
+            font-size: 15px;
+            padding: 10px 0px;
+            text-align: center;
+            width: 115px;
+            border-radius: 100px;
+            color: #202020;
+            background-color: #3d3d3d;
+            margin-right: 40px;
+        }
+        .text{
+            background-color: #3d3d3d;
+            border-radius: 100px;
+            border:none;
+            width: 300px;
+            color: #B5B5B5;
+            font-size: 15px;
+            padding: 0px 20px;
+            &:focus{
+                outline: none;
+                border: 2px solid #B5B5B5;
+            }
+        }
+        .submit{
+            background-color: #3d3d3d;
+            border-radius: 100px;
+            width: 115px;
+            border:none;
+            color: #B5B5B5;
+            font-size: 15px;
+            padding: 10px 20px;
+            &:focus{
+                outline: none;
+                border: 2px solid #B5B5B5;
+            }
+        }
+    }
+    .content_sec{
+         width: 495px;
+         margin: auto;
+        text-align: center;
+        p{
+            border-radius: 100px;
+            font-size: 15px;
+            padding: 10px 0px;
+            text-align: center;
+            width: 115px;
+            color: #202020;
+            background-color: #3d3d3d;
+            margin-bottom: 30px;
+        }
+        textarea{
+            width: 100%;
+            background-color: #3d3d3d;
+            color: #B5B5B5;
+            border:none;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 15px;
+             &:focus{
+                outline: none;
+                border: 2px solid #B5B5B5;
+            }
+        }
+    }
+}
+
+</style>
