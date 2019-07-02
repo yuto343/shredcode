@@ -71,4 +71,18 @@ module.exports = {
   router: {
     middleware: 'pages'
   },
+  generate: {
+    routes() {
+      return client.getEntries({
+        'content_type': 'page',
+      }).then(entries => {
+        return entries.items.map(entry => {
+          return {
+            route: `works/${entry.fields.path}`,
+            payload: entry
+          }
+        })
+      })
+    }
+  },
 }
