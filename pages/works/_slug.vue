@@ -208,7 +208,7 @@ $breakpoint_sp:414px;
     }
     video{
         border-radius: 20px;
-        width: 100%;
+        width: 110%;
     }
 }
 .disc{
