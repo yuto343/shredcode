@@ -207,6 +207,7 @@ $breakpoint_sp:414px;
         min-width:0px;
     }
     video{
+        border-radius: 20px;
         width: 100%;
     }
 }
