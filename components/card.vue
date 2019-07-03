@@ -1,5 +1,5 @@
 <template>
-    <nuxt-link :to= "'works/'+ path">
+    <nuxt-link :to= "'/works/'+ path">
         <div class="card">
             <div class="bg">
                 <video :src="'https:'+videourl" loop muted autoplay></video>
