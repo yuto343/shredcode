@@ -1,14 +1,20 @@
 <template>
     <div>
+         <nuxt-link to="/works"><div class="sp_backbtn">
+                 <div class="wrapper_sp">
+                        <span v-for="i in 9" :key="i"></span>
+                </div>
+                </div>
+        </nuxt-link>
         <div class="content_header">
-            <nuxt-link to="/works">
+            <div class="desc">
+                <nuxt-link to="/works">
                 <div class="back_btn" @mouseenter="mouseEnter" @mouseleave="mouseLeave">
                     <div class="wrapper">
                         <span v-for="i in 9" :key="i"></span>
                     </div>
                 </div>
             </nuxt-link>
-            <div class="desc">
                 <p class="date">{{post.fields.date}}</p>
                 <p class="title">{{post.fields.title}}</p>
             </div>
@@ -64,6 +70,50 @@ const client = createClient()
 </script>
 
 <style lang="scss" scoped>
+$breakpoint_tab:768px;
+$breakpoint_sp:414px;
+@mixin tab{
+  @media(max-width:$breakpoint_tab){
+      @content;
+  }
+}
+@mixin sp{
+  @media(max-width:$breakpoint_sp){
+      @content;
+  }
+}
+.sp_backbtn{
+        cursor: pointer;
+        margin: 15px 30px;
+        width: 50px;
+        height: 30px;
+        border-radius: 180px;
+        background-color: #3D3D3D;
+        transition: .2s;
+        display: none;
+        @include sp{
+            display: block;
+        }
+        &:hover{
+            transform: scale(1.2)
+        }
+        .wrapper,.wrapper_sp{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4px;
+            width: 20px;
+            top: 4px;
+            left: 15px;
+            position: relative;
+            span{
+            width: 4px;
+            height: 4px;
+            background-color: #202020;
+            border-radius: 50%;
+            display: inline-block;
+            }
+        }
+    }
 .content_header{
     margin: 30px auto;
     justify-content: center;
@@ -74,14 +124,17 @@ const client = createClient()
     position: relative;
     .back_btn{
         cursor: pointer;
-        left: 22%;
-        position:absolute;
+        position: absolute;
         margin: 0px 30px;
         width: 50px;
+        left: -100px;
         height: 30px;
         border-radius: 180px;
         background-color: #3D3D3D;
         transition: .2s;
+        @include sp{
+            display: none;
+        }
         &:hover{
             transform: scale(1.2)
         }
@@ -101,11 +154,16 @@ const client = createClient()
         }
     }
     .desc{
+        position: relative;
         display:flex;
-        width: 40%;
+        min-width: 600px;
         height: 30px;
         border-radius: 180px;
         background-color: #3D3D3D;
+        @include sp{
+            min-width: 0px;
+            padding: 0px 20px;
+        }
         .title{
             position: relative;
             top: 1px;
@@ -114,15 +172,20 @@ const client = createClient()
             font-size: 14px;
             line-height: 30px;
             letter-spacing: 2px;
+            width: 100%;
+            text-align: center;
         }
         .date{
-            position: relative;
+            position: absolute;
             top: 1px;
-            margin: auto 100px auto 10px;
+            left: 12px;
             color: #202020;
             line-height: 30px;
             letter-spacing: 1px;
             font-size: 17px;
+            @include sp{
+                display: none;
+            }
         }
     }
 }
@@ -133,11 +196,16 @@ const client = createClient()
     min-width:600px;
     width: 50%;
     margin: auto;
-    height: 400px;
+    // height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    @include sp{
+        width: 100%;
+        box-sizing: border-box;
+        min-width:0px;
+    }
     video{
         width: 100%;
     }
@@ -148,6 +216,9 @@ const client = createClient()
     max-width: 700px;
     text-align: center;
     margin: 40px auto auto auto;
+    @include sp{
+        width: 90%;
+    }
 }
 
 </style>

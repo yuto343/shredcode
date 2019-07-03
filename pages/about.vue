@@ -30,6 +30,18 @@ import anime from 'animejs'
 </script>
 
 <style lang="scss" scoped>
+$breakpoint_tab:768px;
+$breakpoint_sp:414px;
+@mixin tab{
+  @media(max-width:$breakpoint_tab){
+      @content;
+  }
+}
+@mixin sp{
+  @media(max-width:$breakpoint_sp){
+      @content;
+  }
+}
 .container{
     background-color: #3D3D3D;
     color: #B9B9B9;
@@ -40,10 +52,20 @@ import anime from 'animejs'
     margin: auto;
     p{
         margin: 30px;
+        @include sp{
+            margin: 30px 5px;
+        }
     }
     .left{
         line-height: 1.5;
         text-align: left;
+    }
+    @include tab{
+        width: 680px;
+        @include sp{
+             padding:10px;
+            width: 90%;
+        }
     }
 }
 

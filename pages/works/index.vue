@@ -55,10 +55,28 @@ const client = createClient()
 </script>
 
 <style lang="scss" scoped>
+$breakpoint_tab:768px;
+$breakpoint_sp:414px;
+@mixin tab{
+  @media(max-width:$breakpoint_tab){
+      @content;
+  }
+}
+@mixin sp{
+  @media(max-width:$breakpoint_sp){
+      @content;
+  }
+}
 .wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
     margin: 40px auto auto auto;
+    @include tab{
+        grid-template-columns: 1fr 1fr;
+        @include sp{
+            grid-template-columns: 1fr;
+        }
+    }
 }
 </style>

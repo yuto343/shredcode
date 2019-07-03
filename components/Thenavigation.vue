@@ -54,11 +54,24 @@ import { mapGetters ,mapMutations } from 'vuex';
 </script>
 
 <style lang="scss" scoped>
+$breakpoint_tab:768px;
+$breakpoint_sp:414px;
+@mixin tab{
+  @media(max-width:$breakpoint_tab){
+      @content;
+  }
+}
+@mixin sp{
+  @media(max-width:$breakpoint_sp){
+      @content;
+  }
+}
 img{
   margin: 20px auto 10px auto;
   display: block;
   width: 5%;
-  max-width: 100px;
+  max-width: 150px;
+  min-width: 50px;
 }
 .header{
     a{
@@ -77,6 +90,9 @@ img{
     line-height: 30px;
     font-size: 15px;
     letter-spacing: 0.1em;
+    @include sp{
+      width: 97%;
+    }
   .btn{
       cursor: pointer;
     position: relative;

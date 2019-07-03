@@ -19,6 +19,18 @@
 </script>
 
 <style lang="scss" scoped>
+$breakpoint_tab:768px;
+$breakpoint_sp:414px;
+@mixin tab{
+  @media(max-width:$breakpoint_tab){
+      @content;
+  }
+}
+@mixin sp{
+  @media(max-width:$breakpoint_sp){
+      @content;
+  }
+}
 .card{
     width: 250px;
     height: 250px;
@@ -47,6 +59,9 @@ video{
     background-color: #3D3D3D;
     transform:scaleY(0);
     transition: .3s;
+    @include tab{
+        transform:scaleY(1);
+    }
     p{
         color: #B5B5B5;
         width: 100%;

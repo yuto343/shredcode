@@ -28,6 +28,18 @@
 </script>
 
 <style lang="scss" scoped>
+$breakpoint_tab:768px;
+$breakpoint_sp:414px;
+@mixin tab{
+  @media(max-width:$breakpoint_tab){
+      @content;
+  }
+}
+@mixin sp{
+  @media(max-width:$breakpoint_sp){
+      @content;
+  }
+}
  .wrapper{
         margin: auto;
         .disc{
@@ -36,12 +48,20 @@
             max-width: 700px;
             color: #B5B5B5;
         }
+        @include sp{
+            width: 95%;
+        }
     }
 form{
     .section{
         margin: 40px;
         display: flex;
         justify-content: center;
+        @include sp{
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+        }
         p{
             font-size: 15px;
             padding: 10px 0px;
@@ -51,6 +71,9 @@ form{
             color: #202020;
             background-color: #3d3d3d;
             margin-right: 40px;
+            @include sp{
+                margin-bottom: 10px;
+            }
         }
         .text{
             background-color: #3d3d3d;
@@ -63,6 +86,9 @@ form{
             &:focus{
                 outline: none;
                 border: 2px solid #B5B5B5;
+            }
+            @include sp{
+                padding:10px 20px;
             }
         }
         .submit{
@@ -83,6 +109,9 @@ form{
          width: 495px;
          margin: auto;
         text-align: center;
+        @include sp{
+            width: 100%;
+        }
         p{
             border-radius: 100px;
             font-size: 15px;

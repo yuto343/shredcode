@@ -99,6 +99,18 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+$breakpoint_tab:768px;
+$breakpoint_sp:414px;
+@mixin tab{
+  @media(max-width:$breakpoint_tab){
+      @content;
+  }
+}
+@mixin sp{
+  @media(max-width:$breakpoint_sp){
+      @content;
+  }
+}
 .header{
     a{
         color:#202020;
@@ -115,6 +127,9 @@ export default {
   line-height: 30px;
   font-size: 15px;
   letter-spacing: 0.1em;
+  @include sp{
+      width: 100%;
+  }
   .btn{
       cursor: pointer;
     position: relative;
