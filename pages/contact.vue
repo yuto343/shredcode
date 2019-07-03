@@ -1,7 +1,6 @@
 <template>
     <div class="wrapper">
         <P class="japanese disc" >なんでコンタクトがいるんだと思った人。netlifyで簡単に作れると聞いて試してみたかっただけです。でもつこうてくれたら嬉しいです。</P>
-        <no-ssr>
         <form name="contact" method="post" netlify>
             <div class="section">
                 <P>お名前など</P>
@@ -19,7 +18,6 @@
                 <button class="submit" type="submit">送信</button>
             </div>
         </form>
-        </no-ssr>
     </div>
 </template>
 
