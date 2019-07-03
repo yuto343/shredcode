@@ -8,7 +8,7 @@
             </div>
              <div class="section">
                 <P>メール</P>
-                <input class="email" type="text" name="email">
+                <input class="text" type="email" name="email">
             </div>
             <div class="content_sec">
                  <P>内容</P>
