@@ -1,21 +1,21 @@
 <template>
     <div class="wrapper">
         <P class="japanese disc" >なんでコンタクトがいるんだと思った人。netlifyで簡単に作れると聞いて試してみたかっただけです。でもつこうてくれたら嬉しいです。</P>
-        <form>
+        <form name="contact" netlify>
             <div class="section">
                 <P>お名前など</P>
-                <input class="text" type="text">
+                <input class="text" type="text" name="name">
             </div>
              <div class="section">
                 <P>メール</P>
-                <input class="text" type="text">
+                <input class="email" type="text" name="email">
             </div>
             <div class="content_sec">
                  <P>内容</P>
                  <textarea name="content" rows="6" cols="240"></textarea>
             </div>
             <div class="section">
-                <input class="submit" type="submit">
+                <button class="submit" type="submit">送信</button>
             </div>
         </form>
     </div>
@@ -47,6 +47,10 @@ $breakpoint_sp:414px;
             line-height: 2;
             max-width: 700px;
             color: #B5B5B5;
+            @include sp{
+                 margin: 10px auto;
+                 line-height: 1.4;
+            }
         }
         @include sp{
             width: 95%;
