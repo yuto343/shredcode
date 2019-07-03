@@ -5,9 +5,9 @@
       <img src="@/static/img/logo.png" alt="site logo">
       </nuxt-link>
       <div class="header">
-          <nuxt-link to="about"><div class="btn" v-bind:class="{ active: about }">ABOUT</div></nuxt-link>
-          <nuxt-link to="works"><div class="btn" v-bind:class="{ active: works }">WORKS</div></nuxt-link>
-          <nuxt-link to="contact"><div class="btn" v-bind:class="{ active: contact }">CONTACT</div></nuxt-link>
+          <nuxt-link to="/about"><div class="btn" v-bind:class="{ active: about }">ABOUT</div></nuxt-link>
+          <nuxt-link to="/works"><div class="btn" v-bind:class="{ active: works }">WORKS</div></nuxt-link>
+          <nuxt-link to="/contact"><div class="btn" v-bind:class="{ active: contact }">CONTACT</div></nuxt-link>
       </div>
     </div>
   </transition>
