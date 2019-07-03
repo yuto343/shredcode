@@ -2,7 +2,7 @@
   <transition appear v-on:before-enter="enter">
     <div class="navigation">
       <nuxt-link to="/">
-      <img src="@/static/img/logo.png">
+      <img src="@/static/img/logo.png" alt="site logo">
       </nuxt-link>
       <div class="header">
           <nuxt-link to="about"><div class="btn" v-bind:class="{ active: about }">ABOUT</div></nuxt-link>

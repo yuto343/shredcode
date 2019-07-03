@@ -1,7 +1,7 @@
 <template>
   <transition appear v-on:before-appear="enter"> 
     <div class="first_view" @click='click' v-if="firstview">
-        <img src="@/static/img/logo.png">
+        <img src="@/static/img/logo.png" alt="site logo">
         <h1>SHRED CODE</h1>
         <p id="span">
           <span>c</span>

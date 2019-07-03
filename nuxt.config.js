@@ -14,6 +14,9 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    htmlAttrs: {
+      lang: 'ja'
+    },
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
