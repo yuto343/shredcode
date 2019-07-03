@@ -2,6 +2,7 @@
     <div class="wrapper">
         <P class="japanese disc" >なんでコンタクトがいるんだと思った人。netlifyで簡単に作れると聞いて試してみたかっただけです。でもつこうてくれたら嬉しいです。</P>
         <form name="contact" method="post" netlify>
+            <input type="hidden" name="form-name" value="contact">
             <div class="section">
                 <P>お名前など</P>
                 <input class="text" type="text" name="name">
