@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="screen">
-            <video autoplay muted loop v-bind:src="'https:'+ post.fields.screen.fields.file.url"></video>
+            <video playsinline autoplay muted loop v-bind:src="'https:'+ post.fields.screen.fields.file.url"></video>
         </div>
         <div class="disc japanese">
             {{post.fields.discription}}
